@@ -1,0 +1,12 @@
+@import 'sanitize.css';
+
+:root {
+  /*Colors*/
+  --colorPrimary: #3b5bdb;
+  --colorBackground: #f8f9fa;
+}
+
+html {
+  color: var(--colorPrimary);
+  background-color: var(--colorBackground);
+}

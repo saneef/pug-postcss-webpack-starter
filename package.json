@@ -1,0 +1,36 @@
+{
+  "name": "saneef.me",
+  "version": "0.0.1",
+  "description": "Short profile page about Saneef Ansari",
+  "repository": {},
+  "author": "Saneef Ansari <hello@saneef.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "del ./dist && mkdir ./dist",
+    "build": "yarn run clean && npm-run-all --parallel process:*",
+    "process:content": "copy content/**/*.{jpg,png} dist",
+    "process:css": "postcss --config postcss.json -o ./dist/styles.css ./css/styles.css",
+    "process:html": "pug -O ./data.json ./content/*.pug -o dist",
+    "process:js": "webpack",
+    "watch": "yarn run clean && npm-run-all --parallel watch:*",
+    "watch:content": "watch 'yarn run process:content' ./content",
+    "watch:css": "npm-run-all 'process:css -- -w'",
+    "watch:css": "npm-run-all 'process:js -- -w'",
+    "watch:html": "npm-run-all 'process:html -- -w'",
+    "watch:serve": "browser-sync start --no-open --server ./dist -f ./dist",
+    "start": "yarn run watch"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.7",
+    "copy": "^0.3.0",
+    "del-cli": "^0.2.1",
+    "npm-run-all": "^4.0.1",
+    "postcss-cli": "^2.6.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.1.0",
+    "pug-cli": "^1.0.0-alpha6",
+    "sanitize.css": "^4.1.0",
+    "watch": "^1.0.1",
+    "webpack": "^2.4.1"
+  }
+}
