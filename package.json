@@ -1,7 +1,7 @@
 {
-  "name": "saneef.me",
+  "name": "pug-postcss-webpack-starter",
   "version": "0.0.1",
-  "description": "Short profile page about Saneef Ansari",
+  "description": "A static website starter which support Pug.js, PostCSS and Webpack.",
   "repository": {},
   "author": "Saneef Ansari <hello@saneef.com>",
   "license": "MIT",
